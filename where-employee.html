@@ -6,16 +6,14 @@
 			:host {
 				height: 100%;
 			}
-			
-			#button {
-				height: 100%;
-				margin-top: -100%;
-			}
 
 			paper-button {
 				background: #f44336;
   				color: #fafafa;
   				font-weight: bold;
+  				position: fixed;
+  				bottom: 15%;
+  				right: 45%;
 			}
 		</style>
 		
@@ -28,9 +26,8 @@
 		</iron-ajax>
 			
 			<google-map id="map" latitude="{{map.latitude}}" longitude="{{map.longitude}}"></google-map>
-			<div id="button" class="horizontal layout end center-justified">
-				<paper-button on-click="atualizar" raised>Atualizar</paper-button>
-			</div>
+
+			<paper-button on-click="atualizar" raised>Atualizar</paper-button>
 
 	</template>
 	<script>

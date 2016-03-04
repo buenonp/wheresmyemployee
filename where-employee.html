@@ -5,7 +5,16 @@
 		<style>
 			:host {
 				display: block;
-				height: 100%;
+			}
+
+			paper-button {
+				background: #f44336;
+  				color: #fafafa;
+  				font-weight: bold;
+  				position: fixed;
+  				bottom: 15%;
+  				left: 47%;
+  				z-index: 1;
 			}
 		</style>
 		
@@ -17,14 +26,17 @@
 			 	last-response="{{map}}">
 		</iron-ajax>
 			
-		<google-map id="map" latitude="{{map.latitude}}" longitude="{{map.longitude}}"></google-map>
+		<paper-button on-click="atualizar" raised>Atualizar</paper-button>
 
 	</template>
 	<script>
 		Polymer({
 			is: 'where-employee',
 			properties: {
-				map: Object
+				map: {
+					type: Object,
+					notify: true
+				}
 			},
 			atualizar: function () {
 				this.$.ajax.generateRequest();

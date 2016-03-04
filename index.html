@@ -18,12 +18,14 @@
 		  font-family: 'Roboto', Arial, sans-serif;
 		  height: 100%;
 		  margin: 0;
+		  overflow: hidden;
 		}
 	</style>
 </head>
 <body>
-	
-	<where-employee></where-employee>
-
+	<template is="dom-bind">
+		<where-employee map={{map}}></where-employee>
+		<google-map latitude="{{map.latitude}}" longitude="{{map.longitude}}"></google-map>
+	</template>
 </body>
 </html>

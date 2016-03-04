@@ -1,0 +1,47 @@
+<link rel="import" href="bower_components/polymer/polymer.html">
+
+<dom-module id="where-employee">
+	<template>
+		<style>
+			:host {
+				height: 100%;
+			}
+			
+			#button {
+				height: 100%;
+				margin-top: -100%;
+			}
+
+			paper-button {
+				background: #f44336;
+  				color: #fafafa;
+  				font-weight: bold;
+			}
+		</style>
+		
+		<iron-ajax
+				id="ajax"
+			 	auto
+			 	url="http://localhost:3000/"
+			 	handle-as="json"
+			 	last-response="{{map}}">
+		</iron-ajax>
+			
+			<google-map id="map" latitude="{{map.latitude}}" longitude="{{map.longitude}}"></google-map>
+			<div id="button" class="horizontal layout end center-justified">
+				<paper-button on-click="atualizar" raised>Atualizar</paper-button>
+			</div>
+
+	</template>
+	<script>
+		Polymer({
+			is: 'where-employee',
+			properties: {
+				map: Object
+			},
+			atualizar: function () {
+				this.$.ajax.generateRequest();
+			}
+		});
+	</script>
+</dom-module>

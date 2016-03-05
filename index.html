@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	<meta charset="UTF-8">	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<title>Where's My Employee</title>
 
 	<script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
@@ -26,7 +28,7 @@
 	
 	<template is="dom-bind">
 		<where-employee map={{map}}></where-employee>
-		<google-map latitude="{{map.latitude}}" longitude="{{map.longitude}}">
+		<google-map latitude="{{map.latitude}}" longitude="{{map.longitude}}" zoom="15">
 			<google-map-marker latitude="{{map.latitude}}" longitude="{{map.longitude}}"></google-map-marker>
 		</google-map>
 	</template>
